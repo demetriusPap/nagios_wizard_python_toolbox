@@ -1,10 +1,21 @@
 import os
+
+try:
+	os.chmod("/usr/local/nagiosxi/html/config", 511)
+except:
+	print("Something went wrong")
 try:
 	os.mkdir("/usr/local/nagiosxi/html/config/uploads")
 except:
 	print("Folder already exists")
+
+
 try:
- 	os.popen("cp /env/lib/python3.6/site-packages/handle_file_upload.php /usr/local/nagiosxi/html/config/handle_file_upload.php")
+	os.chmod("/usr/local/nagiosxi/html/config/uploads", 511)
+except:
+	print("Something went wrong")
+try:
+ 	os.popen("cp /python/handle_file_upload.php /usr/local/nagiosxi/html/config/handle_file_upload.php")
 except:
 	print("Error")
 
