@@ -8,8 +8,6 @@ try:
 	os.mkdir("/usr/local/nagiosxi/html/config/uploads")
 except:
 	print("Folder already exists")
-
-
 try:
 	os.chmod("/usr/local/nagiosxi/html/config/uploads", 511)
 except:
@@ -18,5 +16,3 @@ try:
  	os.popen("cp /python/handle_file_upload.php /usr/local/nagiosxi/html/config/handle_file_upload.php")
 except:
 	print("Error")
-
-
